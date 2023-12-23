@@ -1,0 +1,8 @@
+<!-- myapp/templates/myapp/project_list.html -->
+{% for datas in data %}
+  <p>{{ datas.title }} - {{ datas.description }}</p>
+  <a href="{% url 'read_operation_with_primary_key' pk=datas.pk %}">View detail</a>
+  <a href="{% url 'update_operation' pk=datas.pk %}">Edit</a>
+  <a href="{% url 'delete_operation' pk=datas.pk %}">Delete</a>
+{% endfor %}
+<a href="{% url 'create_operation' %}">Create Project</a>
